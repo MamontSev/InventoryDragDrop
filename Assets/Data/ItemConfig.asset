@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f647a9ba35ea343a17c26db85cd283, type: 3}
+  m_Name: ItemConfig
+  m_EditorClassIdentifier: 
+  _itemListType:
+  - _selfType: 0
+    _itemList:
+    - _index: 0
+      _name: Amulet1
+      _icon: {fileID: 1578666488, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0410\u043C\u0443\u043B\u0435\u04421"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0410\u043C\u0443\u043B\u0435\u04421"
+    - _index: 1
+      _name: Amulet2
+      _icon: {fileID: -1919685248, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0410\u043C\u0443\u043B\u0435\u04422"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0410\u043C\u0443\u043B\u0435\u04422"
+    - _index: 2
+      _name: Amulet3
+      _icon: {fileID: 1585656529, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0410\u043C\u0443\u043B\u0435\u04423"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0410\u043C\u0443\u043B\u0435\u04423"
+    - _index: 3
+      _name: Amulet4
+      _icon: {fileID: 1380370778, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0410\u043C\u0443\u043B\u0435\u04424"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0410\u043C\u0443\u043B\u0435\u04424"
+  - _selfType: 1
+    _itemList:
+    - _index: 0
+      _name: Ring1
+      _icon: {fileID: -1835324140, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u043E\u043B\u044C\u0446\u043E1"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u043E\u043B\u044C\u0446\u043E1"
+    - _index: 1
+      _name: Ring2
+      _icon: {fileID: -759476792, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u043E\u043B\u044C\u0446\u043E2"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u043E\u043B\u044C\u0446\u043E2"
+    - _index: 2
+      _name: Ring3
+      _icon: {fileID: 510486953, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u043E\u043B\u044C\u0446\u043E3"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u043E\u043B\u044C\u0446\u043E3"
+    - _index: 3
+      _name: Ring4
+      _icon: {fileID: -497648783, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u043E\u043B\u044C\u0446\u043E4"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u043E\u043B\u044C\u0446\u043E4"
+  - _selfType: 2
+    _itemList:
+    - _index: 0
+      _name: Rune1
+      _icon: {fileID: -176329109, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0420\u0443\u043D\u04301"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0420\u0443\u043D\u04301"
+    - _index: 1
+      _name: Rune2
+      _icon: {fileID: -954194399, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0420\u0443\u043D\u04302"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0420\u0443\u043D\u04302"
+    - _index: 2
+      _name: Rune3
+      _icon: {fileID: 658650086, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0420\u0443\u043D\u04303"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0420\u0443\u043D\u04303"
+    - _index: 3
+      _name: Rune4
+      _icon: {fileID: -959622772, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u0420\u0443\u043D\u04304"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0420\u0443\u043D\u04304"
+  - _selfType: 3
+    _itemList:
+    - _index: 0
+      _name: Stone1
+      _icon: {fileID: -1165873572, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u0430\u043C\u0435\u043D\u044C1"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u0430\u043C\u0435\u043D\u044C1"
+    - _index: 1
+      _name: Stone2
+      _icon: {fileID: 1274017703, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u0430\u043C\u0435\u043D\u044C2"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u0430\u043C\u0435\u043D\u044C2"
+    - _index: 2
+      _name: Stone3
+      _icon: {fileID: 626908299, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u0430\u043C\u0435\u043D\u044C3"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u0430\u043C\u0435\u043D\u044C3"
+    - _index: 3
+      _name: Stone4
+      _icon: {fileID: -631365868, guid: 1374113c265535241a09d57ad27cb019, type: 3}
+      _itemName: "\u041A\u0430\u043C\u0435\u043D\u044C4"
+      _itemDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u041A\u0430\u043C\u0435\u043D\u044C4"
