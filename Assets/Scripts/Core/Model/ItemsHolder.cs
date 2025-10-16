@@ -46,7 +46,14 @@ namespace Inventory.Core.Model
 			MakeRemoveItem(index);
 		}
 
-		public bool HaveFreeCell => _currItems.Any(x => x.Value == null);
+		public bool CanAddItem( ItemType itemType , int key )
+		{
+			if( _currItems.Any(x => x.Value == null) )
+				return true;
+			if( _data.GetBehaviourType(itemType) == ItemBehaviour.Stackable )
+				return _currItems.Values.Any(x => x.Type == itemType && x.Key == key);
+			return false;
+		}
 
 		public int GetItemsCountOnStart()
 		{
@@ -71,7 +78,7 @@ namespace Inventory.Core.Model
 			return itemsCount;
 		}
 
-		public void Init(int cellCount)
+		public void Init( int cellCount )
 		{
 			_currItems.Clear();
 			for( int i = 0; i < cellCount; i++ )
@@ -122,7 +129,7 @@ namespace Inventory.Core.Model
 			Sprite icon = _data.GetIcon(item.Type , item.Key);
 			string name = _data.GetName(item.Type , item.Key);
 			bool needCount = _data.GetBehaviourType(item.Type) == ItemBehaviour.Stackable;
-			_selfView.AddItem(icon , name , index , needCount , item.Count,(int)item.Type,item.Key);
+			_selfView.AddItem(icon , name , index , needCount , item.Count , (int)item.Type , item.Key);
 		}
 		private void MakeRemoveItem( int index )
 		{

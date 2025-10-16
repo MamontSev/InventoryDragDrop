@@ -108,7 +108,7 @@ namespace Inventory.Core.View.Panel
 			.DOMove(ShowPos.position , 0.5f)
 			.SetEase(Ease.OutBack)
 			.From(HidePos.position)
-			.ToUniTask();
+			.ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 		}
 
 		private Action OnPutOn;

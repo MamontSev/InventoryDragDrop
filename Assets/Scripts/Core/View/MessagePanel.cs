@@ -37,7 +37,7 @@ namespace Inventory.Core.View
 			FonPanel.SetActive(false);
 		}
 
-		public async UniTask Show(string message)
+		public async UniTask Show(string message)				   
 		{
 			InGo.SetActive(true);
 			FonPanel.SetActive(true);
@@ -48,7 +48,7 @@ namespace Inventory.Core.View
 		   .DOMove(ShowPos.position , 0.5f)
 		   .SetEase(Ease.OutBack)
 		   .From(HidePos.position)
-		   .ToUniTask();
+		   .ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 
 			var tcs = new TaskCompletionSource<bool>();
 			OkButton.onClick.AddListener(() => tcs.SetResult(true));
@@ -58,7 +58,7 @@ namespace Inventory.Core.View
 			.DOMove(HidePos.position , 0.5f)
 			.SetEase(Ease.OutBack)
 			.From(ShowPos.position)
-			.ToUniTask();
+			.ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 
 			InGo.SetActive(false);
 			FonPanel.SetActive(false);

@@ -114,13 +114,13 @@ namespace Inventory.Core.View.Panel
 
 		private bool _isShow = false;
 		private Vector3 _showScale;
-		public async void Show()
+		public async UniTaskVoid Show()
 		{
 			await transform
 		   .DOScale(_showScale , 0.2f)
 		   .SetEase(Ease.OutBack)
 		   .From(Vector3.zero)
-		   .ToUniTask();
+		   .ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 			_isShow = true;
 		}
 		public async UniTask Hide()
@@ -130,7 +130,7 @@ namespace Inventory.Core.View.Panel
 		   .DOScale(Vector3.zero , 0.2f)
 		   .SetEase(Ease.OutBack)
 		   .From(_showScale)
-		   .ToUniTask();
+		   .ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 		}
 
 		#endregion

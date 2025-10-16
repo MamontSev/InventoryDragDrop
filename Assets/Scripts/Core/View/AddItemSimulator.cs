@@ -95,23 +95,24 @@ namespace Inventory.Core.View
 			KeyDropDown.AddOptions(Enum.GetNames(EnumType).ToList());
 		}
 
-		private async void PressedAdd()
+		private void PressedAdd()
 		{
 			if( _levelState.IsPlayimg == false )
 				return;
-			
-			if( _inventoryView.HaveFreeCell )
+			ItemType itemType = (ItemType)TypeDropDown.value;
+			int itemKey = KeyDropDown.value;
+			if( _inventoryView.CanAddItem(itemType , itemKey) )
 			{
-				_state.AddItem((ItemType)TypeDropDown.value , KeyDropDown.value);
+				_state.AddItem(itemType , itemKey);
 			}
 			else
 			{
-				await ShowMsg();
+				ShowMsg();
 			}
 
 		}
 
-		private async UniTask ShowMsg()
+		private async UniTaskVoid ShowMsg()
 		{
 			_levelState.SetToPaused();
 			await _levlUI.ShowMessage("Нет пустых ячеек");
@@ -132,7 +133,7 @@ namespace Inventory.Core.View
 			.DOMove(ShowPos.position , 0.5f)
 			.SetEase(Ease.OutBack)
 			.From(HidePos.position)
-			.ToUniTask();
+			.ToUniTask(TweenCancelBehaviour.Kill , destroyCancellationToken);
 
 		}
 

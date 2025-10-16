@@ -21,9 +21,14 @@ namespace Inventory.Bootstrap
 			this._levelState = _levelState;
 		}
 
-		private async void Start()
+		private void Start()
+		{
+			Init();
+		}
+		private async UniTaskVoid Init()
 		{
 			_levelState.SetToPaused();
+
 			await UniTask.Yield();
 			await _levlUI.Init();
 

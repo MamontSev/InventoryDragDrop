@@ -9,6 +9,8 @@ using UnityEngine;
 
 using Zenject;
 
+using static Inventory.Data.Static.Enums;
+
 namespace Inventory.Core.View.Panel
 {
 	public class InventoryView:MonoBehaviour, IInventoryView
@@ -52,7 +54,7 @@ namespace Inventory.Core.View.Panel
 			await _selfVM.OnShow();
 		}
 
-		public bool HaveFreeCell => _selfVM.HaveFreeCell;
+		public bool CanAddItem( ItemType itemType , int key ) => _selfVM.CanAddItem(itemType , key);
 
 		public async UniTask InitField( int _cellCountX , int _cellCountY )
 		{
@@ -132,30 +134,35 @@ namespace Inventory.Core.View.Panel
 
 		#region Sort
 
-		private async void SortItems()
+		private void SortItems()
 		{
 			if( _levelState.IsPlayimg == false )
 				return;
-			_levelState.SetToPaused();
-			List<UniTask> _taskList = new();
-			foreach( var item in _items.Values )
-			{
-				_taskList.Add(item.Hide());
-			}
-			await UniTask.WhenAll(_taskList);
-			Field.ReturnAllPoints();
+			sort();
 
-			_items = _items.OrderBy(x => x.Value.SelfType).ToDictionary(x => x.Key , pair => pair.Value);
-			foreach( var item in _items.Values )
+			async UniTaskVoid sort()
 			{
-				(Transform point, int fieldIndex) = Field.GetFreePoint();
-				item.transform.localPosition = point.localPosition;
-				item.FieldIndex = fieldIndex;
-				item.Show();
-				await UniTask.Delay(50);
+				_levelState.SetToPaused();
+				List<UniTask> _taskList = new();
+				foreach( var item in _items.Values )
+				{
+					_taskList.Add(item.Hide());
+				}
+				await UniTask.WhenAll(_taskList);
+				Field.ReturnAllPoints();
+
+				_items = _items.OrderBy(x => x.Value.SelfType).ToDictionary(x => x.Key , pair => pair.Value);
+				foreach( var item in _items.Values )
+				{
+					(Transform point, int fieldIndex) = Field.GetFreePoint();
+					item.transform.localPosition = point.localPosition;
+					item.FieldIndex = fieldIndex;
+					item.Show();
+					await UniTask.Delay(50, cancellationToken: destroyCancellationToken);
+				}
+				_levelState.SetToGameLoop();
+				await UniTask.Yield();
 			}
-			_levelState.SetToGameLoop();
-			await UniTask.Yield();
 
 		}
 

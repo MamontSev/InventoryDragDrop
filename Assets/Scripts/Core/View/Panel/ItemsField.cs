@@ -50,7 +50,7 @@ namespace Inventory.Core.View.Panel
 				{
 					GameObject fon = GameObject.Instantiate(ItemFonPrefab,transform);
 					_items.Add(new CellItem() { Point = fon.transform , Index = k , IsFree = true });
-					await UniTask.Delay(50);
+					await UniTask.Delay(50, cancellationToken: destroyCancellationToken);
 					k++;
 				}
 			}

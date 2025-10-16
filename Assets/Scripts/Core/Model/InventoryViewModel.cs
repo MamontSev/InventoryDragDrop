@@ -70,7 +70,7 @@ namespace Inventory.Core.Model
 
 		}
 
-		public bool HaveFreeCell => _items.HaveFreeCell;
+		public bool CanAddItem( ItemType itemType , int key ) => _items.CanAddItem(itemType, key);
 
 		private int _lastSelectItemIndex;
 		public void OnPressedSelect( int index )
